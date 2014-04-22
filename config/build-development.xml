@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<flex-config>
+    <swf-version>24</swf-version>
+    <!-- default-background-color: default background color (may be overridden by the application code)-->
+    <default-background-color>0x808080</default-background-color>
+    <!-- default-frame-rate: default frame rate to be used in the SWF.-->
+    <default-frame-rate>40</default-frame-rate>
+    <!-- use-network: toggle whether the SWF is flagged for access to network resources-->
+    <use-network>true</use-network>
+    <!-- warnings: toggle the display of warnings-->
+    <warnings>true</warnings>
+
+    <compiler>
+        <!-- ENVIRONMENT -->
+        <define>
+            <name>CONFIG::development</name>
+            <value>true</value>
+        </define>
+        <define>
+            <name>CONFIG::production</name>
+            <value>false</value>
+        </define>
+        <!---->
+
+        <!-- METADATA -->
+        <keep-as3-metadata>
+            <name>Inject</name>
+            <name>PostConstruct</name>
+        </keep-as3-metadata>
+
+        <!-- SWF OPTIONS -->
+        <!-- compiler.strict: runs the AS3 compiler in strict animal.error checking mode.-->
+        <strict>true</strict>
+        <!-- compiler.verbose-stacktraces: save callstack information to the SWF for debugging-->
+        <verbose-stacktraces>true</verbose-stacktraces>
+        <!-- compiler.debug: generates a movie that is suitable for debugging-->
+        <debug>true</debug>
+        <!-- compiler.optimize: Enable post-link SWF optimization-->
+        <optimize>false</optimize>
+
+        <!--WARNINGS ENABLED-->
+        <!-- compiler.show-actionscript-warnings: runs the AS3 compiler in a mode that detects legal but potentially incorrect code-->
+        <show-actionscript-warnings>true</show-actionscript-warnings>
+        <!-- compiler.show-binding-warnings: toggle whether warnings generated from data binding code are displayed-->
+        <show-binding-warnings>true</show-binding-warnings>
+        <!-- compiler.warn-bad-array-cast: Possibly invalid Array cast operation.-->
+        <warn-bad-array-cast>true</warn-bad-array-cast>
+        <!-- compiler.warn-bad-bool-assignment: Non-Boolean value used where a Boolean value was expected.-->
+        <warn-bad-bool-assignment>true</warn-bad-bool-assignment>
+        <!-- compiler.warn-bad-date-cast: Invalid Date cast operation.-->
+        <warn-bad-date-cast>true</warn-bad-date-cast>
+        <!-- compiler.warn-bad-es3-type-method: Unknown method.-->
+        <warn-bad-es3-type-method>true</warn-bad-es3-type-method>
+        <!-- compiler.warn-bad-es3-type-prop: Unknown property.-->
+        <warn-bad-es3-type-prop>true</warn-bad-es3-type-prop>
+        <!-- compiler.warn-bad-nan-comparison: Illogical comparison with NaN. Any comparison operation involving NaN will evaluate to false because NaN != NaN.-->
+        <warn-bad-nan-comparison>true</warn-bad-nan-comparison>
+        <!-- compiler.warn-bad-null-assignment: Impossible assignment to null.-->
+        <warn-bad-null-assignment>true</warn-bad-null-assignment>
+        <!-- compiler.warn-bad-null-comparison: Illogical comparison with null.-->
+        <warn-bad-null-comparison>true</warn-bad-null-comparison>
+        <!-- compiler.warn-bad-undefined-comparison: Illogical comparison with undefined.  Only untyped variables (or variables of type *) can be undefined.-->
+        <warn-bad-undefined-comparison>true</warn-bad-undefined-comparison>
+        <!-- compiler.warn-class-is-sealed: Class is sealed.  It cannot have members added to it dynamically.-->
+        <warn-class-is-sealed>true</warn-class-is-sealed>
+        <!-- compiler.warn-const-not-initialized: Constant not initialized.-->
+        <warn-const-not-initialized>true</warn-const-not-initialized>
+        <!-- compiler.warn-duplicate-argument-names: More than one argument by the same name.-->
+        <warn-duplicate-argument-names>true</warn-duplicate-argument-names>
+        <!-- compiler.warn-duplicate-variable-def: Duplicate variable definition -->
+        <warn-duplicate-variable-def>true</warn-duplicate-variable-def>
+        <!-- compiler.warn-import-hides-class: Importing a package by the same name as the current class will hide that class identifier in this scope.-->
+        <warn-import-hides-class>true</warn-import-hides-class>
+        <!-- compiler.warn-instance-of-changes: Use of the instanceof operator.-->
+        <warn-instance-of-changes>true</warn-instance-of-changes>
+        <!-- compiler.warn-internal-animal.error: Internal animal.error in compiler.-->
+        <warn-internal-error>true</warn-internal-error>
+        <!-- compiler.warn-missing-namespace-decl: Missing namespace declaration (e.g. variable is not defined to be public, private, etc.).-->
+        <warn-missing-namespace-decl>true</warn-missing-namespace-decl>
+        <!-- compiler.warn-negative-uint-literal: Negative value will become a large positive value when assigned to a uint data type.-->
+        <warn-negative-uint-literal>true</warn-negative-uint-literal>
+        <!-- compiler.warn-no-type-decl: Missing type declaration.-->
+        <warn-no-type-decl>true</warn-no-type-decl>
+        <!-- compiler.warn-slow-text-field-addition: Inefficient use of += on a TextField.-->
+        <warn-slow-text-field-addition>true</warn-slow-text-field-addition>
+        <!-- compiler.warn-unlikely-function-value: Possible missing parentheses.-->
+        <warn-unlikely-function-value>true</warn-unlikely-function-value>
+
+        <!-- WARNINGS DISABLED -->
+        <!-- compiler.warn-for-var-in-changes: ActionScript 3.0 iterates over an object's properties within a "for x in target" statement in random order.-->
+        <warn-for-var-in-changes>false</warn-for-var-in-changes>
+        <!-- compiler.warn-no-explicit-super-call-in-constructor: The super() statement was not called within the constructor.-->
+        <warn-no-explicit-super-call-in-constructor>false</warn-no-explicit-super-call-in-constructor>
+    </compiler>
+</flex-config>

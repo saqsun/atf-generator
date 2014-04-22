@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="Flex" version="4">
+  <component name="FlexBuildConfigurationManager" active="[D] G-ATF">
+    <configurations>
+      <configuration name="[D] G-ATF" target-platform="Desktop" pure-as="true" main-class="Main" output-file="G-ATF.swf" output-folder="$MODULE_DIR$/out/development">
+        <dependencies target-player="13.0">
+          <entries>
+            <entry library-name="swiftsuspenders" library-level="application">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-name="robotlegs" library-level="application">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-name="signals" library-level="application">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-name="minimalcomps" library-level="application">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-name="spicelib-commands" library-level="application">
+              <dependency linkage="Merged" />
+            </entry>
+          </entries>
+          <sdk name="AIRSDK_Compiler_13" />
+        </dependencies>
+        <compiler-options>
+          <option name="additionalConfigFilePath" value="$MODULE_DIR$/config/build-development.xml" />
+        </compiler-options>
+        <packaging-air-desktop use-generated-descriptor="false" custom-descriptor-path="$MODULE_DIR$/config/descriptor.xml" package-file-name="G-ATF" />
+        <packaging-android />
+        <packaging-ios />
+      </configuration>
+      <configuration name="[P] G-ATF" target-platform="Desktop" pure-as="true" main-class="Main" output-file="G-ATF.swf" output-folder="$MODULE_DIR$/out/production">
+        <dependencies>
+          <entries>
+            <entry library-name="swiftsuspenders" library-level="application">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-name="robotlegs" library-level="application">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-name="signals" library-level="application">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-name="minimalcomps" library-level="application">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-name="spicelib-commands" library-level="application">
+              <dependency linkage="Merged" />
+            </entry>
+          </entries>
+          <sdk name="AIRSDK_Compiler_13" />
+        </dependencies>
+        <compiler-options>
+          <option name="additionalConfigFilePath" value="$MODULE_DIR$/config/build-development.xml" />
+        </compiler-options>
+        <packaging-air-desktop use-generated-descriptor="false" custom-descriptor-path="$MODULE_DIR$/config/descriptor.xml" package-file-name="[P]_G-ATF" />
+        <packaging-android />
+        <packaging-ios />
+      </configuration>
+    </configurations>
+    <compiler-options />
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/exec" isTestSource="false" />
+    </content>
+    <orderEntry type="jdk" jdkName="AIRSDK_Compiler_13" jdkType="Flex SDK Type (new)" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" exported="" name="swiftsuspenders" level="application" />
+    <orderEntry type="library" exported="" name="robotlegs" level="application" />
+    <orderEntry type="library" exported="" name="signals" level="application" />
+    <orderEntry type="library" exported="" name="minimalcomps" level="application" />
+    <orderEntry type="library" exported="" name="spicelib-commands" level="application" />
+  </component>
+</module>
+

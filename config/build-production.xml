@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<flex-config>
+    <swf-version>24</swf-version>
+    <!-- default-background-color: default background color (may be overridden by the application code)-->
+    <default-background-color>0x808080</default-background-color>
+    <!-- default-frame-rate: default frame rate to be used in the SWF.-->
+    <default-frame-rate>40</default-frame-rate>
+    <!-- use-network: toggle whether the SWF is flagged for access to network resources-->
+    <use-network>true</use-network>
+    <!-- warnings: toggle the display of warnings-->
+    <warnings>false</warnings>
+
+    <compiler>
+
+        <!-- ENVIRONMENT -->
+        <define>
+            <name>CONFIG::development</name>
+            <value>false</value>
+        </define>
+        <define>
+            <name>CONFIG::production</name>
+            <value>true</value>
+        </define>
+        <!---->
+
+        <!-- METADATA -->
+        <keep-as3-metadata>
+            <name>Inject</name>
+            <name>PostConstruct</name>
+        </keep-as3-metadata>
+
+        <!-- SWF OPTIONS -->
+        <!-- compiler.strict: runs the AS3 compiler in strict animal.error checking mode.-->
+        <strict>true</strict>
+        <!-- compiler.verbose-stacktraces: save callstack information to the SWF for debugging-->
+        <verbose-stacktraces>false</verbose-stacktraces>
+        <!-- compiler.debug: generates a movie that is suitable for debugging-->
+        <debug>false</debug>
+        <!-- compiler.optimize: Enable post-link SWF optimization-->
+        <optimize>true</optimize>
+
+    </compiler>
+</flex-config>
