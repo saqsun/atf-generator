@@ -54,7 +54,14 @@
         <compiler-options>
           <option name="additionalConfigFilePath" value="$MODULE_DIR$/config/build-development.xml" />
         </compiler-options>
-        <packaging-air-desktop use-generated-descriptor="false" custom-descriptor-path="$MODULE_DIR$/config/descriptor.xml" package-file-name="[P]_G-ATF" />
+        <packaging-air-desktop use-generated-descriptor="false" custom-descriptor-path="$MODULE_DIR$/config/descriptor.xml" package-file-name="G-ATF">
+          <files-to-package>
+            <FilePathAndPathInPackage file-path="$MODULE_DIR$/out/production/dds2atf" path-in-package="dds2atf" />
+            <FilePathAndPathInPackage file-path="$MODULE_DIR$/out/production/atfinfo" path-in-package="atfinfo" />
+            <FilePathAndPathInPackage file-path="$MODULE_DIR$/out/production/png2atf" path-in-package="png2atf" />
+            <FilePathAndPathInPackage file-path="$MODULE_DIR$/out/production/pvr2atf" path-in-package="pvr2atf" />
+          </files-to-package>
+        </packaging-air-desktop>
         <packaging-android />
         <packaging-ios />
       </configuration>
