@@ -6,6 +6,9 @@ import gatf.controller.signal.AddPNGsSignal;
 import gatf.controller.signal.GenerateATFsSignal;
 import gatf.controller.signal.LogDataSignal;
 
+import org.spicefactory.lib.logging.LogContext;
+import org.spicefactory.lib.logging.Logger;
+
 import robotlegs.bender.bundles.mvcs.Mediator;
 
 public class ApplicationViewMediator extends Mediator {
@@ -21,6 +24,7 @@ public class ApplicationViewMediator extends Mediator {
     public var _logDataSignal:LogDataSignal;
 
     override public function initialize():void {
+        var log:Logger = LogContext.getLogger(ApplicationViewMediator);
         _applicationView.onButtonAddPNGsClick.add(onButtonAddPNGs);
         _applicationView.onButtonGenerateATFsClick.add(onButtonGenerateATFs);
         _applicationView.onCheckBoxBlockBasedCompressionClick.add(onCheckBoxBlockBasedCompression);
@@ -28,7 +32,7 @@ public class ApplicationViewMediator extends Mediator {
         _applicationView.disableBlockCompressedTextureSet();
         _applicationView.setMipmapRangeValue(0, 0);
         _applicationView.setQuantizationLevelValue(30);
-        trace(this, "initialize");
+        log.info("{0} initialize", this);
     }
 
     override public function destroy():void {
@@ -44,17 +48,18 @@ public class ApplicationViewMediator extends Mediator {
     }
 
     private function onCheckBoxBlockBasedCompression(selected:Boolean):void {
-        if (selected) {
-            _applicationView.disableNonBlockCompressionOptions();
-            _applicationView.enableBlockCompressedTextureSet();
-        }
-        else {
-            _applicationView.enableNonBlockCompressionOptions();
-            _applicationView.disableBlockCompressedTextureSet();
-        }
+//        if (selected) {
+//            _applicationView.disableNonBlockCompressionOptions();
+//            _applicationView.enableBlockCompressedTextureSet();
+//        }
+//        else {
+//            _applicationView.enableNonBlockCompressionOptions();
+//            _applicationView.disableBlockCompressedTextureSet();
+//        }
     }
 
     private function onButtonGenerateATFs():void {
+        _applicationView.disable();
         var data:Object = {};
         data.blockCompression = _applicationView.blockCompressionCheckBoxValue;
         data.blockCompressedTexturePVRTC4bpp = _applicationView.blockCompressedTexturePVRTC4bppRadioButtonValue;

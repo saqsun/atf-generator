@@ -13,7 +13,6 @@ import com.bit101.components.Style;
 import com.bit101.components.TextArea;
 import com.bit101.components.VBox;
 
-import flash.display.Sprite;
 import flash.events.Event;
 import flash.events.MouseEvent;
 import flash.filesystem.File;
@@ -21,7 +20,7 @@ import flash.filesystem.File;
 import org.osflash.signals.ISignal;
 import org.osflash.signals.Signal;
 
-public class ApplicationView extends Sprite {
+public class ApplicationView extends ApplicationViewBase {
     private var _onButtonAddPNGsClick:ISignal;
     private var _onButtonGenerateATFsClick:ISignal;
     private var _onCheckBoxBlockBasedCompressionClick:ISignal;
@@ -41,6 +40,10 @@ public class ApplicationView extends Sprite {
     private var _colorSpacing4RadioButton:RadioButton;
     private var _colorSpacing2RadioButton:RadioButton;
     private var _colorSpacing0RadioButton:RadioButton;
+    private var _mainBox:VBox;
+    private var _buttonBox:HBox;
+    private var _configBox:HBox;
+    private var _outputBox:HBox;
 
     public function ApplicationView() {
         Style.setStyle(Style.DARK);
@@ -56,20 +59,20 @@ public class ApplicationView extends Sprite {
     }
 
     private function viewAddedToStageHandler(event:Event):void {
-        removeEventListener(Event.ADDED_TO_STAGE, viewAddedToStageHandler);
-        var mainBox:VBox = new VBox(this, 10, 10);
-        mainBox.spacing = 30;
-
-        var buttonBox:HBox = new HBox(mainBox);
-
-        var configBox:HBox = new HBox(mainBox);
-        configBox.spacing = 172;
-
-        var outputBox:HBox = new HBox(mainBox);
-
-        buildButtonBox(buttonBox);
-        buildConfigBox(configBox);
-        buildOutputBox(outputBox);
+//        removeEventListener(Event.ADDED_TO_STAGE, viewAddedToStageHandler);
+//        _mainBox = new VBox(this, 10, 10);
+//        _mainBox.spacing = 30;
+//
+//        _buttonBox = new HBox(_mainBox);
+//
+//        _configBox = new HBox(_mainBox);
+//        _configBox.spacing = 172;
+//
+//        _outputBox = new HBox(_mainBox);
+//
+//        buildButtonBox(_buttonBox);
+//        buildConfigBox(_configBox);
+//        buildOutputBox(_outputBox);
 
     }
 
@@ -183,7 +186,7 @@ public class ApplicationView extends Sprite {
     }
 
     public function disableBlockCompressedTextureSet():void {
-        _blockCompressedTextureSet.enabled = false;
+//        _blockCompressedTextureSet.enabled = false;
     }
 
     public function logData(data:String):void {
@@ -192,12 +195,12 @@ public class ApplicationView extends Sprite {
     }
 
     public function setMipmapRangeValue(start:int, end:int):void {
-        _mipMapRangeSlider.lowValue = start;
-        _mipMapRangeSlider.highValue = end;
+//        _mipMapRangeSlider.lowValue = start;
+//        _mipMapRangeSlider.highValue = end;
     }
 
     public function setQuantizationLevelValue(level:int):void {
-        _quantizationSlider.value = level;
+//        _quantizationSlider.value = level;
     }
 
 
@@ -238,6 +241,17 @@ public class ApplicationView extends Sprite {
 
     public function get colorSpacing0RadioButtonValue():Boolean {
         return _colorSpacing0RadioButton.selected;
+    }
+
+    public function disable():void {
+        _buttonBox.enabled = false;
+        _configBox.enabled = false;
+    }
+
+    override protected function childrenCreated():void
+    {
+        super.childrenCreated();
+
     }
 }
 }

@@ -2,8 +2,8 @@
 <module type="Flex" version="4">
   <component name="FlexBuildConfigurationManager" active="[D] G-ATF">
     <configurations>
-      <configuration name="[D] G-ATF" target-platform="Desktop" pure-as="true" main-class="Main" output-file="G-ATF.swf" output-folder="$MODULE_DIR$/out/development">
-        <dependencies target-player="13.0">
+      <configuration name="[D] G-ATF" target-platform="Desktop" main-class="gatf.Main" output-file="G-ATF.swf" output-folder="$MODULE_DIR$/out/development">
+        <dependencies component-set="SparkOnly">
           <entries>
             <entry library-name="swiftsuspenders" library-level="application">
               <dependency linkage="Merged" />
@@ -21,7 +21,7 @@
               <dependency linkage="Merged" />
             </entry>
           </entries>
-          <sdk name="AIRSDK_Compiler_13" />
+          <sdk name="apache-flex-sdk-4.12.1" />
         </dependencies>
         <compiler-options>
           <option name="additionalConfigFilePath" value="$MODULE_DIR$/config/build-development.xml" />
@@ -30,7 +30,7 @@
         <packaging-android />
         <packaging-ios />
       </configuration>
-      <configuration name="[P] G-ATF" target-platform="Desktop" pure-as="true" main-class="Main" output-file="G-ATF.swf" output-folder="$MODULE_DIR$/out/production">
+      <configuration name="[P] G-ATF" target-platform="Desktop" main-class="gatf.Main" output-file="G-ATF.swf" output-folder="$MODULE_DIR$/out/production">
         <dependencies>
           <entries>
             <entry library-name="swiftsuspenders" library-level="application">
@@ -49,7 +49,7 @@
               <dependency linkage="Merged" />
             </entry>
           </entries>
-          <sdk name="AIRSDK_Compiler_13" />
+          <sdk name="apache-flex-sdk-4.12.1" />
         </dependencies>
         <compiler-options>
           <option name="additionalConfigFilePath" value="$MODULE_DIR$/config/build-development.xml" />
@@ -73,8 +73,9 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/exec" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/bin" />
     </content>
-    <orderEntry type="jdk" jdkName="AIRSDK_Compiler_13" jdkType="Flex SDK Type (new)" />
+    <orderEntry type="jdk" jdkName="apache-flex-sdk-4.12.1" jdkType="Flex SDK Type (new)" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="swiftsuspenders" level="application" />
     <orderEntry type="library" exported="" name="robotlegs" level="application" />
