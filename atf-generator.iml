@@ -14,9 +14,6 @@
             <entry library-name="signals" library-level="application">
               <dependency linkage="Merged" />
             </entry>
-            <entry library-name="minimalcomps" library-level="application">
-              <dependency linkage="Merged" />
-            </entry>
             <entry library-name="spicelib-commands" library-level="application">
               <dependency linkage="Merged" />
             </entry>
@@ -40,9 +37,6 @@
               <dependency linkage="Merged" />
             </entry>
             <entry library-name="signals" library-level="application">
-              <dependency linkage="Merged" />
-            </entry>
-            <entry library-name="minimalcomps" library-level="application">
               <dependency linkage="Merged" />
             </entry>
             <entry library-name="spicelib-commands" library-level="application">
@@ -80,7 +74,6 @@
     <orderEntry type="library" exported="" name="swiftsuspenders" level="application" />
     <orderEntry type="library" exported="" name="robotlegs" level="application" />
     <orderEntry type="library" exported="" name="signals" level="application" />
-    <orderEntry type="library" exported="" name="minimalcomps" level="application" />
     <orderEntry type="library" exported="" name="spicelib-commands" level="application" />
   </component>
 </module>

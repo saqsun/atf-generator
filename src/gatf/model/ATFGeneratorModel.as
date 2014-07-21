@@ -7,6 +7,7 @@ import flash.filesystem.File;
 import gatf.controller.signal.LogDataSignal;
 import gatf.model.commands.ATFInfoCommand;
 import gatf.model.commands.GenerateSingleATFCommand;
+import gatf.vo.GenerateATFVO;
 
 import org.spicefactory.lib.command.builder.CommandGroupBuilder;
 import org.spicefactory.lib.command.builder.Commands;
@@ -28,7 +29,7 @@ public class ATFGeneratorModel {
         }
     }
 
-    public function generateATFs(data:Object):void {
+    public function generateATFs(data:GenerateATFVO):void {
         var sequenceCommand:CommandGroupBuilder = Commands.asSequence();
         sequenceCommand.allResults(resultHandler);
         for each(var png:File in _pngFiles) {

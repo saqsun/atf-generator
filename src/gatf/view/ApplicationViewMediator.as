@@ -5,6 +5,7 @@ package gatf.view {
 import gatf.controller.signal.AddPNGsSignal;
 import gatf.controller.signal.GenerateATFsSignal;
 import gatf.controller.signal.LogDataSignal;
+import gatf.vo.GenerateATFVO;
 
 import org.spicefactory.lib.logging.LogContext;
 import org.spicefactory.lib.logging.Logger;
@@ -27,51 +28,25 @@ public class ApplicationViewMediator extends Mediator {
         var log:Logger = LogContext.getLogger(ApplicationViewMediator);
         _applicationView.onButtonAddPNGsClick.add(onButtonAddPNGs);
         _applicationView.onButtonGenerateATFsClick.add(onButtonGenerateATFs);
-        _applicationView.onCheckBoxBlockBasedCompressionClick.add(onCheckBoxBlockBasedCompression);
-        _logDataSignal.add(onLogData);
-        _applicationView.disableBlockCompressedTextureSet();
-        _applicationView.setMipmapRangeValue(0, 0);
-        _applicationView.setQuantizationLevelValue(30);
         log.info("{0} initialize", this);
     }
 
     override public function destroy():void {
         _applicationView.onButtonAddPNGsClick.remove(onButtonAddPNGs);
         _applicationView.onButtonGenerateATFsClick.remove(onButtonGenerateATFs);
-        _applicationView.onCheckBoxBlockBasedCompressionClick.remove(onCheckBoxBlockBasedCompression);
-        _logDataSignal.remove(onLogData);
         trace(this, "destroy");
     }
 
-    private function onLogData(data:String):void {
-        _applicationView.logData(data);
-    }
-
-    private function onCheckBoxBlockBasedCompression(selected:Boolean):void {
-//        if (selected) {
-//            _applicationView.disableNonBlockCompressionOptions();
-//            _applicationView.enableBlockCompressedTextureSet();
-//        }
-//        else {
-//            _applicationView.enableNonBlockCompressionOptions();
-//            _applicationView.disableBlockCompressedTextureSet();
-//        }
-    }
-
     private function onButtonGenerateATFs():void {
-        _applicationView.disable();
-        var data:Object = {};
-        data.blockCompression = _applicationView.blockCompressionCheckBoxValue;
-        data.blockCompressedTexturePVRTC4bpp = _applicationView.blockCompressedTexturePVRTC4bppRadioButtonValue;
-        data.blockCompressedTextureDXT1 = _applicationView.blockCompressedTextureDXT1RadioButtonValue;
-        data.blockCompressedTextureETC1 = _applicationView.blockCompressedTextureETC1RadioButtonValue;
-        data.jpeg_xr_lzma_compression = _applicationView.JPEG_XR_LZMACompressionCheckBoxValue;
-        data.mipMapRange = _applicationView.mipMapRangeSliderValue;
-        data.quantization = _applicationView.quantizationSliderValue;
-        data.flexBits = _applicationView.flexBitsSliderValue;
-        data.colorSpacing4 = _applicationView.colorSpacing4RadioButtonValue;
-        data.colorSpacing2 = _applicationView.colorSpacing2RadioButtonValue;
-        data.colorSpacing0 = _applicationView.colorSpacing0RadioButtonValue;
+        var data:GenerateATFVO = new GenerateATFVO();
+        data.blockCompression = _applicationView.blockCompression;
+        data.blockCompressedTextureCompression = _applicationView.blockCompressedTextureCompression;
+        data.jpeg_xr_lzma_compression = _applicationView.jpeg_xr_lzma_compression;
+        data.mipMapLevelStart = _applicationView.mipMapLevelStart;
+        data.mipMapLevelEnd = _applicationView.mipMapLevelEnd;
+        data.quantization = _applicationView.quantization;
+        data.flexBits = _applicationView.flexBits;
+        data.colorSpacing = _applicationView.colorSpacing;
         _generateATFsSignal.dispatch(data);
     }
 

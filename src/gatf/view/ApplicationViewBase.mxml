@@ -2,6 +2,147 @@
 <!--
   Created by sargissargsyan on 7/17/14.
 -->
-<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009" xmlns:s="library://ns.adobe.com/flex/spark">
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009"
+         xmlns:s="library://ns.adobe.com/flex/spark">
+
+    <fx:Declarations>
+        <s:RadioButtonGroup id="_radioBtnGroup"
+                            enabled="{_blockCompressionCheckBox.selected}"/>
+
+    </fx:Declarations>
+
+    <fx:Script><![CDATA[
+        import org.apache.flex.collections.ArrayList;
+
+        private static const DP_COLOR_SPACING:ArrayList = new ArrayList(
+                [
+                    {label: "", data: "null"},
+                    {label: "4:4:4 (-4)", data: "-4"},
+                    {label: "4:2:2 (-2)", data: "-2"},
+                    {label: "4:2:0 (-0)", data: "-0"}
+                ]
+        );
+
+        protected function addPNGsButtonClickHandler(event:MouseEvent):void {
+
+        }
+
+        protected function generateATFsButtonClickHandler(event:MouseEvent):void {
+
+        }
+        ]]>
+     </fx:Script>
+
+    <s:VGroup gap="15">
+        <s:Button id="_addPNGsButton"
+                  label="Add PNGs" click="addPNGsButtonClickHandler(event);"/>
+
+        <s:Line width="100%">
+            <s:stroke>
+                <s:SolidColorStroke color="0x898989" weight="1" caps="round"/>
+            </s:stroke>
+        </s:Line>
+
+        <s:Group>
+            <s:layout>
+                <s:VerticalLayout/>
+            </s:layout>
+            <s:CheckBox id="_blockCompressionCheckBox" label="Block based compression (-c)"/>
+
+            <s:Group scaleX=".95" scaleY=".95">
+                <s:layout>
+                    <s:VerticalLayout gap="3" paddingBottom="5" paddingLeft="15" paddingRight="5"
+                                      paddingTop="-2"/>
+                </s:layout>
+                <s:RadioButton
+                        label="PVRTC4bpp (p)"
+                        group="{_radioBtnGroup}" value="p"/>
+
+                <s:RadioButton
+                        label="DXT1 (d)"
+                        group="{_radioBtnGroup}" value="d"/>
+
+                <s:RadioButton
+                        label="ETC1 (e)"
+                        group="{_radioBtnGroup}" value="e"/>
+
+                <s:RadioButton
+                        label="All"
+                        group="{_radioBtnGroup}" value="null"/>
+            </s:Group>
+        </s:Group>
+
+        <s:CheckBox id="_JPEG_XR_LZMACompressionCheckBox" label="Compress texture using JPEG-XR+LZMA (-r)"/>
+
+        <s:Group>
+            <s:layout>
+                <s:HorizontalLayout gap="3" verticalAlign="middle"/>
+            </s:layout>
+
+
+            <s:Label textAlign="left" text="Mip map levels (-n) : "/>
+            <s:NumericStepper id="_mipMapLevelStartNumericStepper"
+                              minimum="0"
+                              maximum="9"
+                              stepSize="1"
+                              value="0"
+                    />
+            <s:Label textAlign="left" text="-"/>
+            <s:NumericStepper id="_mipMapLevelEndNumericStepper"
+                              minimum="0"
+                              maximum="10"
+                              stepSize="1"
+                              value="0"
+                    />
+        </s:Group>
+
+
+        <s:Group enabled="{!_blockCompressionCheckBox.selected}">
+            <s:layout>
+                <s:HorizontalLayout gap="3" verticalAlign="middle"/>
+            </s:layout>
+            <s:Label textAlign="left" text="Quantization (-q) : "/>
+            <s:HSlider maximum="180"
+                       minimum="0"
+                       stepSize="1"
+                       value="30"
+                       id="_quantizationSlider"
+                       showDataTip="false"/>
+            <s:Label textAlign="left" text="{_quantizationSlider.value}"/>
+        </s:Group>
+        <s:Group enabled="{!_blockCompressionCheckBox.selected}">
+            <s:layout>
+                <s:HorizontalLayout gap="3" verticalAlign="middle"/>
+            </s:layout>
+            <s:Label textAlign="left" text="Trim flex bits (-f) : "/>
+            <s:HSlider maximum="15"
+                       minimum="0"
+                       stepSize="1"
+                       value="0"
+                       id="_flexBitsSlider"
+                       showDataTip="false"/>
+            <s:Label textAlign="left" text="{_flexBitsSlider.value}"/>
+        </s:Group>
+        <s:Group enabled="{!_blockCompressionCheckBox.selected}">
+            <s:layout>
+                <s:HorizontalLayout gap="3" verticalAlign="middle"/>
+            </s:layout>
+            <s:Label textAlign="left" text="Color spacing : "/>
+            <s:DropDownList id="_colorSpacingDropDownList" selectedIndex="0" dataProvider="{DP_COLOR_SPACING}"/>
+        </s:Group>
+        <s:Line width="100%">
+            <s:stroke>
+                <s:SolidColorStroke color="0x898989" weight="1" caps="round"/>
+            </s:stroke>
+        </s:Line>
+        <s:HGroup>
+            <s:Group>
+                <s:Button id="_generateATFsButton"
+                          label="Generate ATFs" click="generateATFsButtonClickHandler(event);"/>
+            </s:Group>
+        </s:HGroup>
+
+    </s:VGroup>
+
 
 </s:Group>
