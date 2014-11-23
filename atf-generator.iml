@@ -3,7 +3,7 @@
   <component name="FlexBuildConfigurationManager" active="[D] G-ATF">
     <configurations>
       <configuration name="[D] G-ATF" target-platform="Desktop" main-class="gatf.Main" output-file="G-ATF.swf" output-folder="$MODULE_DIR$/out/development">
-        <dependencies component-set="SparkOnly">
+        <dependencies>
           <entries>
             <entry library-name="swiftsuspenders" library-level="application">
               <dependency linkage="Merged" />
@@ -17,8 +17,11 @@
             <entry library-name="spicelib-commands" library-level="application">
               <dependency linkage="Merged" />
             </entry>
+            <entry library-name="robotlegs-signalCommandMap" library-level="application">
+              <dependency linkage="Merged" />
+            </entry>
           </entries>
-          <sdk name="apache-flex-sdk-4.12.1" />
+          <sdk name="apache-flex-sdk-4.13.0" />
         </dependencies>
         <compiler-options>
           <option name="additionalConfigFilePath" value="$MODULE_DIR$/config/build-development.xml" />
@@ -42,8 +45,11 @@
             <entry library-name="spicelib-commands" library-level="application">
               <dependency linkage="Merged" />
             </entry>
+            <entry library-name="robotlegs-signalCommandMap" library-level="application">
+              <dependency linkage="Merged" />
+            </entry>
           </entries>
-          <sdk name="apache-flex-sdk-4.12.1" />
+          <sdk name="apache-flex-sdk-4.13.0" />
         </dependencies>
         <compiler-options>
           <option name="additionalConfigFilePath" value="$MODULE_DIR$/config/build-development.xml" />
@@ -69,12 +75,12 @@
       <sourceFolder url="file://$MODULE_DIR$/exec" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/bin" />
     </content>
-    <orderEntry type="jdk" jdkName="apache-flex-sdk-4.12.1" jdkType="Flex SDK Type (new)" />
+    <orderEntry type="jdk" jdkName="apache-flex-sdk-4.13.0" jdkType="Flex SDK Type (new)" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="swiftsuspenders" level="application" />
     <orderEntry type="library" exported="" name="robotlegs" level="application" />
-    <orderEntry type="library" exported="" name="signals" level="application" />
     <orderEntry type="library" exported="" name="spicelib-commands" level="application" />
+    <orderEntry type="library" exported="" name="signals" level="application" />
+    <orderEntry type="library" exported="" name="robotlegs-signalCommandMap" level="application" />
   </component>
 </module>
-
